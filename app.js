@@ -5,9 +5,16 @@ const apiKey = "9bfa99fffea4f23e3e01be8849025063";
 async function getWeather(latitude, longitude) {
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric&lang=pl`);
+        
+        // Sprawdzenie statusu odpowiedzi
+        if (!response.ok) {
+            throw new Error(`Błąd odpowiedzi: ${response.status}`);
+        }
+
         const data = await response.json();
 
         // Sprawdzanie, czy odpowiedź zawiera dane o pogodzie
+        console.log(data); // Dodaj logowanie odpowiedzi do konsoli
         if (data.cod === 200) {
             const location = `${data.name}, ${data.sys.country}`;
             const temperature = `${data.main.temp}°C`;
@@ -18,10 +25,11 @@ async function getWeather(latitude, longitude) {
             document.getElementById("temperature").textContent = `Temperatura: ${temperature}`;
             document.getElementById("description").textContent = `Opis: ${description}`;
         } else {
-            document.getElementById("error").textContent = "Nie udało się pobrać danych o pogodzie.";
+            document.getElementById("error").textContent = `Błąd API: ${data.message}`;
         }
     } catch (error) {
-        document.getElementById("error").textContent = "Błąd połączenia z serwisem pogodowym.";
+        console.error(error); // Logowanie błędu w konsoli
+        document.getElementById("error").textContent = `Błąd połączenia z serwisem pogodowym: ${error.message}`;
     }
 }
 
