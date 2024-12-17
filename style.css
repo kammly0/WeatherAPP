@@ -95,9 +95,90 @@ h1 {
     color: #333;
 }
 
-/* Wersja mobilna */
-@media (max-width: 600px) {
+/* Responsywność */
+@media (max-width: 1200px) {
+    /* Dostosowanie rozmiaru fontów i marginesów na większych ekranach, np. na tabletach */
+    .weather-container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .temperature {
+        font-size: 2rem;
+    }
+    .description {
+        font-size: 1.1rem;
+    }
+    .forecast-container h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    /* Dostosowanie dla średnich ekranów (tablety i mniejsze) */
+    .weather-container {
+        padding: 20px;
+        width: 80%;
+    }
+    h1 {
+        font-size: 1.7rem;
+    }
+    .temperature {
+        font-size: 2rem;
+    }
+    .description {
+        font-size: 1rem;
+    }
     .forecast {
         grid-template-columns: 1fr 1fr;
+    }
+    .weather-day p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Dostosowanie dla mniejszych ekranów, np. telefony */
+    .weather-container {
+        padding: 15px;
+        width: 90%;
+    }
+    h1 {
+        font-size: 1.6rem;
+    }
+    .temperature {
+        font-size: 1.8rem;
+    }
+    .description {
+        font-size: 0.9rem;
+    }
+    .forecast {
+        grid-template-columns: 1fr;
+    }
+    .weather-day p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    /* Dostosowanie dla bardzo małych ekranów */
+    .weather-container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .temperature {
+        font-size: 1.7rem;
+    }
+    .description {
+        font-size: 0.8rem;
+    }
+    .forecast {
+        grid-template-columns: 1fr;
+    }
+    .weather-day p {
+        font-size: 0.8rem;
     }
 }
