@@ -1,6 +1,8 @@
+/* Styl ogólny */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,59 +11,93 @@ body {
     height: 100vh;
 }
 
+/* Główna kontener pogody */
 .weather-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 800px;
+    font-size: 1rem;
 }
 
+/* Nagłówek */
 h1 {
-    color: #333;
-}
-
-#temperature {
     font-size: 2rem;
+    color: #444;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Sekcja z lokalizacją */
+.location {
+    font-size: 1.1rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+/* Sekcja z temperaturą */
+.temperature {
+    font-size: 2.5rem;
+    color: #007bff;
     font-weight: bold;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
-#description {
-    font-size: 1.2rem;
-    color: #555;
-}
-
-#location {
+/* Sekcja z opisem pogody */
+.description {
     font-size: 1.1rem;
     color: #666;
+    margin-bottom: 30px;
 }
 
-#future-days {
-    margin-top: 20px;
+/* Błędy */
+.error-message {
+    color: #e74c3c;
+    font-size: 1rem;
 }
 
-#future-days h2 {
+/* Sekcja prognozy */
+.forecast-container {
+    margin-top: 30px;
+}
+
+.forecast-container h2 {
+    font-size: 1.4rem;
     color: #333;
-    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
-#forecast {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+/* Sekcja prognoz na 6 dni */
+.forecast {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-items: center;
 }
 
 .weather-day {
-    font-size: 1.1rem;
-    color: #555;
-    margin-top: 10px;
-    flex: 0 0 30%;
+    background-color: #f0f8ff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
 }
 
-#error {
-    color: red;
-    margin-top: 20px;
+.weather-day p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Wersja mobilna */
+@media (max-width: 600px) {
+    .forecast {
+        grid-template-columns: 1fr 1fr;
+    }
 }
