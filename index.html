@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aktualna Pogoda</title>
+    <title>Prognoza Pogody</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="weather-container">
-        <h1>Aktualna Pogoda</h1>
-        <p id="location" class="location">Ładowanie lokalizacji...</p>
-        <p id="temperature" class="temperature">Ładowanie pogody...</p>
-        <p id="description" class="description">Ładowanie opisu...</p>
-        <div id="future-days" class="forecast-container">
-            <h2>Prognoza na 6 dni</h2>
-            <div id="forecast" class="forecast"></div>
+    <header>
+        <h1>Prognoza Pogody</h1>
+    </header>
+    <main>
+        <div class="weather-container">
+            <p id="current-weather">Ładowanie pogody...</p>
+            <div class="forecast" id="forecast"></div>
         </div>
-        <p id="error" class="error-message"></p>
-    </div>
-    <script src="app.js"></script>
+    </main>
+    <footer>
+        <p>© 2024 Prognoza Pogody | OpenWeatherMap API</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>

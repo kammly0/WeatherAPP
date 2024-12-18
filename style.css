@@ -1,184 +1,112 @@
-/* Styl ogólny */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
+/* Ogólne ustawienia */
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    box-sizing: border-box;
 }
 
-/* Główna kontener pogody */
-.weather-container {
-    background-color: #ffffff;
-    border-radius: 15px;
-    padding: 30px;
-    width: 100%;
-    max-width: 500px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: linear-gradient(to bottom, #87CEEB, #f0f8ff);
+    padding: 20px;
     text-align: center;
-    font-size: 1rem;
 }
 
 /* Nagłówek */
-h1 {
-    font-size: 2rem;
-    color: #444;
+header {
     margin-bottom: 20px;
-    font-weight: 600;
+    color: #fff;
+    background-color: #4682B4;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Sekcja z lokalizacją */
-.location {
-    font-size: 1.1rem;
-    color: #888;
-    margin-bottom: 10px;
+header h1 {
+    font-size: 2.5em;
 }
 
-/* Sekcja z temperaturą */
-.temperature {
-    font-size: 2.5rem;
-    color: #007bff;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* Sekcja z opisem pogody */
-.description {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 30px;
-}
-
-/* Błędy */
-.error-message {
-    color: #e74c3c;
-    font-size: 1rem;
-}
-
-/* Sekcja prognozy */
-.forecast-container {
-    margin-top: 30px;
-}
-
-.forecast-container h2 {
-    font-size: 1.4rem;
-    color: #333;
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-
-/* Sekcja prognoz na 6 dni */
-.forecast {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    justify-items: center;
-}
-
-.weather-day {
-    background-color: #f0f8ff;
-    padding: 15px;
-    border-radius: 10px;
+/* Główna sekcja */
+.weather-container {
+    background: #ffffff;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    text-align: center;
-    font-size: 1rem;
 }
 
-.weather-day p {
-    margin: 0;
-    font-size: 1rem;
-    color: #333;
+.weather-container p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Prognoza pogody */
+.forecast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.forecast-day {
+    flex: 1 1 calc(50% - 20px);
+    margin: 10px;
+    padding: 15px;
+    background: #f7f9fc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.forecast-day:hover {
+    transform: scale(1.05);
+}
+
+.forecast-day p {
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.forecast-day strong {
+    display: block;
+    font-size: 1.1em;
+    color: #4682B4;
+}
+
+/* Stopka */
+footer {
+    margin-top: 30px;
+    color: #fff;
+    background-color: #4682B4;
+    padding: 10px 0;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsywność */
-@media (max-width: 1200px) {
-    /* Dostosowanie rozmiaru fontów i marginesów na większych ekranach, np. na tabletach */
-    .weather-container {
-        padding: 20px;
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
     }
-    h1 {
-        font-size: 1.8rem;
+
+    .forecast-day {
+        flex: 1 1 100%;
     }
-    .temperature {
-        font-size: 2rem;
-    }
-    .description {
-        font-size: 1.1rem;
-    }
-    .forecast-container h2 {
-        font-size: 1.2rem;
+
+    .weather-container p {
+        font-size: 1em;
     }
 }
 
-@media (max-width: 900px) {
-    /* Dostosowanie dla średnich ekranów (tablety i mniejsze) */
-    .weather-container {
-        padding: 20px;
-        width: 80%;
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
     }
-    h1 {
-        font-size: 1.7rem;
-    }
-    .temperature {
-        font-size: 2rem;
-    }
-    .description {
-        font-size: 1rem;
-    }
-    .forecast {
-        grid-template-columns: 1fr 1fr;
-    }
-    .weather-day p {
-        font-size: 0.9rem;
-    }
-}
 
-@media (max-width: 600px) {
-    /* Dostosowanie dla mniejszych ekranów, np. telefony */
-    .weather-container {
-        padding: 15px;
-        width: 90%;
-    }
-    h1 {
-        font-size: 1.6rem;
-    }
-    .temperature {
-        font-size: 1.8rem;
-    }
-    .description {
-        font-size: 0.9rem;
-    }
-    .forecast {
-        grid-template-columns: 1fr;
-    }
-    .weather-day p {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 400px) {
-    /* Dostosowanie dla bardzo małych ekranów */
-    .weather-container {
-        padding: 10px;
-    }
-    h1 {
-        font-size: 1.5rem;
-    }
-    .temperature {
-        font-size: 1.7rem;
-    }
-    .description {
-        font-size: 0.8rem;
-    }
-    .forecast {
-        grid-template-columns: 1fr;
-    }
-    .weather-day p {
-        font-size: 0.8rem;
+    footer p {
+        font-size: 0.8em;
     }
 }
