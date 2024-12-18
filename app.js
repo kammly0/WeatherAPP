@@ -1,5 +1,5 @@
 // script.js
-const apiKey = '9bfa99fffea4f23e3e01be8849025063_API';
+const apiKey = '9bfa99fffea4f23e3e01be8849025063';
 const currentWeatherElement = document.getElementById('current-weather');
 const forecastElement = document.getElementById('forecast');
 
