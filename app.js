@@ -1,4 +1,4 @@
-const apiKey = "9bfa99fffea4f23e3e01be8849025063025063";  // Wstaw swój klucz API
+const apiKey = 9bfa99fffea4f23e3e01be8849025063025063;  // Wstaw swój klucz API
 
 // Funkcja do pobrania pogody na podstawie współrzędnych
 async function getWeather(latitude, longitude) {
