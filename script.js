@@ -1,5 +1,4 @@
-// script.js
-const apiKey = '9bfa99fffea4f23e3e01be8849025063';
+const apiKey = 'TWÓJ_KLUCZ_API';
 const currentWeatherElement = document.getElementById('current-weather');
 const forecastElement = document.getElementById('forecast');
 
@@ -34,12 +33,14 @@ async function fetchWeather(position) {
 
 // Wyświetlanie aktualnej pogody
 function displayCurrentWeather(data) {
-    const { main, weather, name } = data;
+    const { main, weather, wind, name } = data;
     currentWeatherElement.innerHTML = `
         <h2>Aktualna pogoda w ${name}</h2>
         <p>${weather[0].description}</p>
         <p>Temperatura: ${main.temp}°C</p>
         <p>Wilgotność: ${main.humidity}%</p>
+        <p>Prędkość wiatru: ${wind.speed} m/s</p>
+        <p>Ciśnienie: ${main.pressure} hPa</p>
     `;
 }
 
@@ -53,7 +54,11 @@ function displayForecast(data) {
             <div class="forecast-day">
                 <p><strong>${date.toLocaleDateString('pl-PL', options)}</strong></p>
                 <p>${day.weather[0].description}</p>
-                <p>Temp: ${day.main.temp}°C</p>
+                <p>Temperatura: ${day.main.temp}°C</p>
+                <p>Maks: ${day.main.temp_max}°C, Min: ${day.main.temp_min}°C</p>
+                <p>Wilgotność: ${day.main.humidity}%</p>
+                <p>Prędkość wiatru: ${day.wind.speed} m/s</p>
+                <p>Ciśnienie: ${day.main.pressure} hPa</p>
             </div>
         `;
     }).join('');
