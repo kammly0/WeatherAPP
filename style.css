@@ -1,127 +1,112 @@
-/* Ogólne ustawienia */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Minimalistyczny i nowoczesny styl */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background: #f8f9fa;
     color: #333;
     line-height: 1.6;
-    background: linear-gradient(to bottom, #87CEEB, #f0f8ff);
-    padding: 20px;
-    text-align: center;
 }
 
-/* Nagłówek */
 header {
-    margin-bottom: 20px;
-    color: #fff;
-    background-color: #4682B4;
-    padding: 20px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 2.5em;
-}
-
-/* Główna sekcja */
-.weather-container {
-    background: #ffffff;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.weather-container p {
-    font-size: 1.2em;
+    font-size: 1.8em;
     margin-bottom: 10px;
 }
 
-/* Prognoza pogody */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.search-container input {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.search-container button:hover {
+    background: #004090;
+}
+
+/* Kontener na pogodę */
+.weather-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.weather-container div {
+    margin-bottom: 20px;
+}
+
 .forecast {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 20px;
 }
 
-.forecast-day {
-    flex: 1 1 calc(50% - 20px);
+.forecast .forecast-day {
+    flex: 1 1 calc(30% - 20px);
+    background: #f1f1f1;
     margin: 10px;
     padding: 15px;
-    background: #f7f9fc;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
     text-align: center;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease-in-out;
 }
 
-.forecast-day:hover {
+.forecast .forecast-day:hover {
     transform: scale(1.05);
 }
 
-.forecast-day p {
-    margin-bottom: 8px;
-    font-size: 1em;
+.air-quality {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e9f7e9;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
 }
 
-.forecast-day strong {
-    display: block;
-    font-size: 1.1em;
-    color: #4682B4;
+/* Mapa pogodowa */
+#map-container {
+    margin: 20px auto;
+    text-align: center;
 }
 
-/* Stopka */
-footer {
-    margin-top: 30px;
-    color: #fff;
-    background-color: #4682B4;
-    padding: 10px 0;
-    font-size: 0.9em;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+#map {
+    height: 400px;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsywność */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
-
-    .forecast-day {
-        flex: 1 1 100%;
-    }
-
-    .weather-container p {
-        font-size: 1em;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    footer p {
-        font-size: 0.8em;
-    }
-}
-.forecast-day p {
-    margin-bottom: 6px;
-    font-size: 0.95em;
-    color: #555;
-}
-
-.forecast-day strong {
-    font-size: 1.2em;
-    color: #4682B4;
-}
-
-.forecast-day:hover {
-    background: #eaf4ff;
-    cursor: pointer;
+.layer-controls {
+    margin-top: 10px;
 }

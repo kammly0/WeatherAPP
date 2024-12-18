@@ -9,15 +9,34 @@
 <body>
     <header>
         <h1>Prognoza Pogody</h1>
+        <div class="search-container">
+            <input type="text" id="city-input" placeholder="Wpisz miejscowość...">
+            <button id="search-btn">Szukaj</button>
+        </div>
     </header>
     <main>
         <div class="weather-container">
-            <p id="current-weather">Ładowanie pogody...</p>
-            <div class="forecast" id="forecast"></div>
+            <div id="current-weather">Ładowanie danych...</div>
+            <div id="forecast" class="forecast"></div>
+            <div id="air-quality" class="air-quality"></div>
+        </div>
+        <div id="map-container">
+            <h2>Mapa Pogodowa</h2>
+            <div id="map" class="map"></div>
+            <div class="layer-controls">
+                <label for="layer-select">Wybierz warstwę:</label>
+                <select id="layer-select">
+                    <option value="clouds_new">Zachmurzenie</option>
+                    <option value="precipitation_new">Opady</option>
+                    <option value="pressure_new">Ciśnienie</option>
+                    <option value="wind_new">Prędkość wiatru</option>
+                    <option value="temp_new">Temperatura</option>
+                </select>
+            </div>
         </div>
     </main>
     <footer>
-        <p>© 2024 Prognoza Pogody | OpenWeatherMap API</p>
+        <p>© 2024 Prognoza Pogody | Dane: OpenWeatherMap</p>
     </footer>
     <script src="script.js"></script>
 </body>
